@@ -1,6 +1,4 @@
 // bubble sort header file
-#include <iostream>
-
 class bubbleSort {
 public:
     // constructor
