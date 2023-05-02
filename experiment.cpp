@@ -4,6 +4,7 @@ using namespace std;
 
 // header files for each sort
 #include "Selection.h"
+#include "Merge.h"
 
 // function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size);   
@@ -21,7 +22,7 @@ int main() {
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
-    cout << endl << endl;
+    cout << endl;
 
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
     // make an object of sort and call on selection sort class to handle sort
@@ -44,7 +45,20 @@ int main() {
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
+    cout << endl;
 
+    // MERGE SORT FUNCTION #2 -------------------------------------------------
+    // make an object of sort and call on merge sort class to handle sort
+    Merge merge;
+    merge.mergeSort(arr, 0, size - 1);
+
+    // print out sorted array to check merge sort
+    cout << "Array after merge sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF MERGE SORT FUNCTION #2 ------------------------------------------
 
 
     return 0;
