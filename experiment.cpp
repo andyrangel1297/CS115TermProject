@@ -2,13 +2,11 @@
 
 using namespace std;
 
-
-// function prototype for sorting algorithms
-void selectionSort(int arr[], int size);
+// header files for each sort
+#include "Selection.h"
 
 // function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size);   
-
 
 
 // main function
@@ -26,7 +24,9 @@ int main() {
     cout << endl << endl;
 
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
-    selectionSort(arr, size);
+    // make an object of sort and call on selection sort class to handle sort
+    Selection selection;
+    selection.selectionSort(arr, size);
 
     // print out sorted array to check selection sort
     cout << "Array after selection sort: ";
@@ -34,46 +34,30 @@ int main() {
         cout << arr[i] << " ";
     }
     cout << endl << endl;
+    // END OF SELECTION SORT FUNCTION #1 --------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
-    // print original array
+    // print out unsorted array
     cout << "\nOriginal array: ";
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
 
+
+
     return 0;
 }
 
-// function for returning original unsorted array
+// function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size) {
-    int originalArr[10] = {0};
-
+    // create an array with 10 elements
+    int ogArr[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    // replace original array with these values
     for (int i = 0; i < size; i++) {
-        originalArr[i] = arr[i];
+        arr[i] = ogArr[i];
     }
 }
 
-// SELECTION SORT ALGORITHM #1 -------------------------------------------------
-void selectionSort(int arr[], int size) {
-    int i, j, indexSmallest, temp = 0;
-
-    for (i = 0; i < size - 1; i++) {
-        indexSmallest = i;
-
-        for (j = i + 1; j < size; j++) {
-
-            if (arr[j] < arr[indexSmallest]) {
-                indexSmallest = j;
-            }
-        }
-
-        // swap function
-        temp = arr[i];
-        arr[i] = arr[indexSmallest];
-        arr[indexSmallest] = temp;
-    }
-}
 
