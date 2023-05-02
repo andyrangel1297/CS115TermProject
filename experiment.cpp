@@ -5,6 +5,7 @@ using namespace std;
 // header files for each sort
 #include "Selection.h"
 #include "Merge.h"
+#include "Insertion.h"
 
 // function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size);   
@@ -59,6 +60,29 @@ int main() {
     }
     cout << endl << endl;
     // END OF MERGE SORT FUNCTION #2 ------------------------------------------
+
+    // call function that creates original unsorted array
+    createOriginalArray(arr, size);
+
+    // print out unsorted array
+    cout << "\nOriginal array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // INSERTION SORT FUNCTION #3 ---------------------------------------------
+    // make an object of sort and call on insertion sort class to handle sort
+    Insertion insertion;
+    insertion.insertionSort(arr, size);
+
+    // print out sorted array to check insertion sort
+    cout << "Array after insertion sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 
 
     return 0;
