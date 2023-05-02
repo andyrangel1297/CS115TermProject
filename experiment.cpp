@@ -6,6 +6,8 @@ using namespace std;
 #include "Selection.h"
 #include "Merge.h"
 #include "Insertion.h"
+#include "Bubble.h"
+
 
 // function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size);   
@@ -84,6 +86,29 @@ int main() {
     cout << endl << endl;
     // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 
+    // call function that creates original unsorted array
+    createOriginalArray(arr, size);
+
+    // print out unsorted array
+    cout << "\nOriginal array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // BUBBLE SORT FUNCTION #4 ------------------------------------------------
+    // make an object of sort and call on bubble sort class to handle sort
+    Bubble bubble;
+    bubble.bubbleSort(arr, size);
+
+    // print out sorted array to check bubble sort
+    cout << "Array after bubble sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF BUBBLE SORT FUNCTION #4 -----------------------------------------
+    
 
     return 0;
 }
