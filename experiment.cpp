@@ -8,6 +8,7 @@ using namespace std;
 #include "Insertion.h"
 #include "Bubble.h"
 #include "Quick.h"
+#include "Radix.h"
 
 
 // function for returning original unsorted array using reference
@@ -133,7 +134,30 @@ int main() {
     cout << endl << endl;
     // END OF QUICK SORT FUNCTION #5 ------------------------------------------
     
+    // call function that creates original unsorted array
+    createOriginalArray(arr, size);
 
+    // print out unsorted array
+    cout << "\nOriginal array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // RADIX SORT FUNCTION #6 -------------------------------------------------
+    // make an object of sort and call on radix sort class to handle sort
+    Radix radix;
+    radix.radixSort(arr, size);
+
+    // print out sorted array to check radix sort
+    cout << "Array after radix sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF RADIX SORT FUNCTION #6 ------------------------------------------
+
+    
     return 0;
 }
 
