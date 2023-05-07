@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-bool findPair(int arr[], int n, int x);
+bool findPairBrute(int arr[], int n, int x);
+bool findPairEfficient(int arr[], int n, int x);
 void bubbleSort(int arr[], int n);
 void swap(int& a, int& b);
 
@@ -15,9 +16,16 @@ int main(void) {
 
 	for (int i = 0; i < n; i++) {
 		cout << a[i] << " ";
-	} cout << endl;
+	} cout << "\n" << endl;
 
-	if (findPair(a, n, x) == true) {
+	if (findPairBrute(a, n, x) == true) {
+		cout << "Pair found" << endl;
+	}
+	else {
+		cout << "Pair not found" << endl;
+	}
+	
+	if (findPairEfficient(a, n, x) == true) {
 		cout << "Pair found" << endl;
 	}
 	else {
@@ -27,7 +35,18 @@ int main(void) {
 	return 0;
 }
 
-bool findPair(int arr[], int n, int x) {
+bool findPairBrute(int arr[], int n, int x) {
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (j != i && arr[i] + arr[j] == x) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool findPairEfficient(int arr[], int n, int x) {
 
 	int low = 0;
 	int high = n - 1;
