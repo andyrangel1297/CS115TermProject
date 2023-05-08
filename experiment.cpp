@@ -9,6 +9,7 @@ using namespace std;
 #include "Bubble.h"
 #include "Quick.h"
 #include "Radix.h"
+#include "Heap.h"
 
 
 // function for returning original unsorted array using reference
@@ -156,6 +157,39 @@ int main() {
     }
     cout << endl << endl;
     // END OF RADIX SORT FUNCTION #6 ------------------------------------------
+
+    // call function that creates original unsorted array
+    createOriginalArray(arr, size);
+
+    // print out unsorted array
+    cout << "\nOriginal array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    // HEAP SORT FUNCTION #7 --------------------------------------------------
+    // make an object of sort and call on heap sort class to handle sort
+    Heap heap;
+    heap.heapSort(arr, size);
+
+    // print out sorted array to check heap sort
+    cout << "Array after heap sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF HEAP SORT FUNCTION #7 -------------------------------------------
+
+    // call function that creates original unsorted array
+    createOriginalArray(arr, size);
+
+    // print out unsorted array
+    cout << "\nOriginal array: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     
     return 0;
