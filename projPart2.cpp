@@ -36,9 +36,9 @@ int main(void) {
 }
 
 bool findPairBrute(int arr[], int n, int x) {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			if (j != i && arr[i] + arr[j] == x) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (arr[i] + arr[j] == x) {
 				return true;
 			}
 		}
