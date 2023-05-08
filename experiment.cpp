@@ -15,6 +15,8 @@ using namespace std;
 
 // function for returning original unsorted array using reference
 void createOriginalArray(int arr[], int size);   
+void printOriginalArray(int arr[], int size, string message);
+void printSortedArray(int arr[], int size, string message);
 
 
 // main function
@@ -25,11 +27,7 @@ int main() {
     int size = 10;
 
     // print out unsorted array
-    cout << "Original array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
     // make an object of sort and call on selection sort class to handle sort
@@ -37,22 +35,15 @@ int main() {
     selection.selectionSort(arr, size);
 
     // print out sorted array to check selection sort
-    cout << "Array after selection sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after selection sort: ");
+
     // END OF SELECTION SORT FUNCTION #1 --------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // MERGE SORT FUNCTION #2 -------------------------------------------------
     // make an object of sort and call on merge sort class to handle sort
@@ -60,22 +51,15 @@ int main() {
     merge.mergeSort(arr, 0, size - 1);
 
     // print out sorted array to check merge sort
-    cout << "Array after merge sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after merge sort: ");
+
     // END OF MERGE SORT FUNCTION #2 ------------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // INSERTION SORT FUNCTION #3 ---------------------------------------------
     // make an object of sort and call on insertion sort class to handle sort
@@ -83,22 +67,15 @@ int main() {
     insertion.insertionSort(arr, size);
 
     // print out sorted array to check insertion sort
-    cout << "Array after insertion sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after insertion sort: ");
+    
     // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // BUBBLE SORT FUNCTION #4 ------------------------------------------------
     // make an object of sort and call on bubble sort class to handle sort
@@ -106,22 +83,15 @@ int main() {
     bubble.bubbleSort(arr, size);
 
     // print out sorted array to check bubble sort
-    cout << "Array after bubble sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after bubble sort: ");
+
     // END OF BUBBLE SORT FUNCTION #4 -----------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // QUICK SORT FUNCTION #5 -------------------------------------------------
     // make an object of sort and call on quick sort class to handle sort
@@ -129,22 +99,15 @@ int main() {
     quick.quickSort(arr, 0, size - 1);
 
     // print out sorted array to check quick sort
-    cout << "Array after quick sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after quick sort: ");
+
     // END OF QUICK SORT FUNCTION #5 ------------------------------------------
     
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // RADIX SORT FUNCTION #6 -------------------------------------------------
     // make an object of sort and call on radix sort class to handle sort
@@ -152,22 +115,15 @@ int main() {
     radix.radixSort(arr, size);
 
     // print out sorted array to check radix sort
-    cout << "Array after radix sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after radix sort: ");
+
     // END OF RADIX SORT FUNCTION #6 ------------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // HEAP SORT FUNCTION #7 --------------------------------------------------
     // make an object of sort and call on heap sort class to handle sort
@@ -175,22 +131,15 @@ int main() {
     heap.heapSort(arr, size);
 
     // print out sorted array to check heap sort
-    cout << "Array after heap sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after heap sort: ");
+
     // END OF HEAP SORT FUNCTION #7 -------------------------------------------
 
     // call function that creates original unsorted array
     createOriginalArray(arr, size);
 
     // print out unsorted array
-    cout << "\nOriginal array: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+    printOriginalArray(arr, size, "Original array: ");
 
     // COUNTING SORT FUNCTION #8 ----------------------------------------------
     // make an object of sort and call on counting sort class to handle sort
@@ -198,13 +147,10 @@ int main() {
     counting.countingSort(arr, size);
 
     // print out sorted array to check counting sort
-    cout << "Array after counting sort: ";
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl << endl;
+    printSortedArray(arr, size, "Array after counting sort: ");
+
     // END OF COUNTING SORT FUNCTION #8 ---------------------------------------
-    
+
     return 0;
 }
 
@@ -218,4 +164,21 @@ void createOriginalArray(int arr[], int size) {
     }
 }
 
+// function for printing original unsorted array
+void printOriginalArray(int arr[], int size, string message) {
+    cout << message << ": ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+// function for printing sorted array after each sort
+void printSortedArray(int arr[], int size, string message) {
+    cout << message << ": ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+}
 
