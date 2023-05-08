@@ -1,4 +1,8 @@
 #include <iostream>
+#include <string>
+// header files for implementation of random number generator
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -13,8 +17,12 @@ using namespace std;
 #include "Counting.h"
 
 
-// function for returning original unsorted array using reference
-void createOriginalArray(int arr[], int size);   
+// functions repeated for each sort
+// functions for reordering array to best, worst, and average case
+void reOrderBestCase(int arr[], int size);
+void reOrderWorstCase(int arr[], int size);
+void reOrderAvgCase(int arr[], int size);
+
 void printOriginalArray(int arr[], int size, string message);
 void printSortedArray(int arr[], int size, string message);
 
@@ -22,147 +30,181 @@ void printSortedArray(int arr[], int size, string message);
 // main function
 int main() {
 
-    // create an array with 10 elements
-    int arr[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    int size = 10;
+    // create 3 arrays for each case (sizes 10, 100, 1000)
+    int smallArr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int smallSize = 10;
 
-    // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    int mediumArr[100];
+    for (int i = 0; i < 100; i++) {
+        mediumArr[i] = i + 1;
+    }
+    int mediumSize = 100;
+
+    int largeArr[1000];
+    for (int i = 0; i < 1000; i++) {
+        largeArr[i] = i + 1;
+    }
+    int largeSize = 1000;
+
+    // print out small unsorted array
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
     // make an object of sort and call on selection sort class to handle sort
     Selection selection;
-    selection.selectionSort(arr, size);
+    selection.selectionSort(smallArr, smallSize);
 
     // print out sorted array to check selection sort
-    printSortedArray(arr, size, "Array after selection sort: ");
+    printSortedArray(smallArr, smallSize, "Array after selection sort: ");
 
     // END OF SELECTION SORT FUNCTION #1 --------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
-
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // MERGE SORT FUNCTION #2 -------------------------------------------------
     // make an object of sort and call on merge sort class to handle sort
     Merge merge;
-    merge.mergeSort(arr, 0, size - 1);
+    merge.mergeSort(smallArr, 0, smallSize - 1);
 
     // print out sorted array to check merge sort
-    printSortedArray(arr, size, "Array after merge sort: ");
+    printSortedArray(smallArr, smallSize, "Array after merge sort: ");
 
     // END OF MERGE SORT FUNCTION #2 ------------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // INSERTION SORT FUNCTION #3 ---------------------------------------------
     // make an object of sort and call on insertion sort class to handle sort
     Insertion insertion;
-    insertion.insertionSort(arr, size);
+    insertion.insertionSort(smallArr, smallSize);
 
     // print out sorted array to check insertion sort
-    printSortedArray(arr, size, "Array after insertion sort: ");
+    printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
     
     // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // BUBBLE SORT FUNCTION #4 ------------------------------------------------
     // make an object of sort and call on bubble sort class to handle sort
     Bubble bubble;
-    bubble.bubbleSort(arr, size);
+    bubble.bubbleSort(smallArr, smallSize);
 
     // print out sorted array to check bubble sort
-    printSortedArray(arr, size, "Array after bubble sort: ");
+    printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
 
     // END OF BUBBLE SORT FUNCTION #4 -----------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
+
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // QUICK SORT FUNCTION #5 -------------------------------------------------
     // make an object of sort and call on quick sort class to handle sort
     Quick quick;
-    quick.quickSort(arr, 0, size - 1);
+    quick.quickSort(smallArr, 0, smallSize - 1);
 
     // print out sorted array to check quick sort
-    printSortedArray(arr, size, "Array after quick sort: ");
+    printSortedArray(smallArr, smallSize, "Array after quick sort: ");
 
     // END OF QUICK SORT FUNCTION #5 ------------------------------------------
     
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
+
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // RADIX SORT FUNCTION #6 -------------------------------------------------
     // make an object of sort and call on radix sort class to handle sort
     Radix radix;
-    radix.radixSort(arr, size);
+    radix.radixSort(smallArr, smallSize);
 
     // print out sorted array to check radix sort
-    printSortedArray(arr, size, "Array after radix sort: ");
+    printSortedArray(smallArr, smallSize, "Array after radix sort: ");
 
     // END OF RADIX SORT FUNCTION #6 ------------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
+
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // HEAP SORT FUNCTION #7 --------------------------------------------------
     // make an object of sort and call on heap sort class to handle sort
     Heap heap;
-    heap.heapSort(arr, size);
+    heap.heapSort(smallArr, smallSize);
 
     // print out sorted array to check heap sort
-    printSortedArray(arr, size, "Array after heap sort: ");
+    printSortedArray(smallArr, smallSize, "Array after heap sort: ");
 
     // END OF HEAP SORT FUNCTION #7 -------------------------------------------
 
-    // call function that creates original unsorted array
-    createOriginalArray(arr, size);
+
 
     // print out unsorted array
-    printOriginalArray(arr, size, "Original array: ");
+    printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // COUNTING SORT FUNCTION #8 ----------------------------------------------
     // make an object of sort and call on counting sort class to handle sort
     Counting counting;
-    counting.countingSort(arr, size);
+    counting.countingSort(smallArr, smallSize);
 
     // print out sorted array to check counting sort
-    printSortedArray(arr, size, "Array after counting sort: ");
+    printSortedArray(smallArr, smallSize, "Array after counting sort: ");
 
     // END OF COUNTING SORT FUNCTION #8 ---------------------------------------
 
     return 0;
 }
 
-// function for returning original unsorted array using reference
-void createOriginalArray(int arr[], int size) {
-    // create an array with 10 elements
-    int ogArr[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
-    // replace original array with these values
+// function that reorders array to best case
+void reOrderBestCase(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        arr[i] = ogArr[i];
+        arr[i] = i + 1;
     }
 }
+
+// function that reorders array to worst case
+void reOrderWorstCase(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        arr[i] = size - i;
+    }
+}
+
+// function that reorders array to average case
+// function makes array with random, distinct values within range of size
+void reOrderAvgCase(int arr[], int size) {
+    // create array of size size
+    int* temp = new int[size];
+
+    // fill array with values 1 to size
+    for (int i = 0; i < size; i++) {
+        temp[i] = i + 1;
+    }
+
+    // shuffle array
+    for (int i = 0; i < size; i++) {
+        int j = rand() % size;
+        int temp2 = temp[i];
+        temp[i] = temp[j];
+        temp[j] = temp2;
+    }
+
+    // copy shuffled array into original array
+    for (int i = 0; i < size; i++) {
+        arr[i] = temp[i];
+    }
+
+    // delete temp array
+    delete[] temp;
+}
+
 
 // function for printing original unsorted array
 void printOriginalArray(int arr[], int size, string message) {
