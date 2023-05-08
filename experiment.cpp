@@ -10,6 +10,7 @@ using namespace std;
 #include "Quick.h"
 #include "Radix.h"
 #include "Heap.h"
+#include "Counting.h"
 
 
 // function for returning original unsorted array using reference
@@ -191,6 +192,18 @@ int main() {
     }
     cout << endl;
 
+    // COUNTING SORT FUNCTION #8 ----------------------------------------------
+    // make an object of sort and call on counting sort class to handle sort
+    Counting counting;
+    counting.countingSort(arr, size);
+
+    // print out sorted array to check counting sort
+    cout << "Array after counting sort: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl << endl;
+    // END OF COUNTING SORT FUNCTION #8 ---------------------------------------
     
     return 0;
 }
