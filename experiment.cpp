@@ -53,10 +53,12 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    
 //======================================================================================================================================================================
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
     // make an object of sort and call on selection sort class to handle sort
     Selection selection;
+    cout << "Selection Sort Trials" << endl; 
 
     // Best Case Sort
     auto start = high_resolution_clock::now();
@@ -71,6 +73,7 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop3 = high_resolution_clock::now();
     cout << "Time taken for best case selection sort on large array: " << duration_cast<microseconds>(stop3 - start3).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted arrays to check selection sort [check passed]
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
@@ -100,6 +103,7 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop6 = high_resolution_clock::now();
     cout << "Time taken for worst case selection sort on large array: " << duration_cast<microseconds>(stop6 - start6).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
@@ -129,6 +133,7 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop9 = high_resolution_clock::now();
     cout << "Time taken for average case selection sort on large array: " << duration_cast<microseconds>(stop9 - start9).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
@@ -147,6 +152,7 @@ int main() {
     // MERGE SORT FUNCTION #2 -------------------------------------------------
     // make an object of sort and call on merge sort class to handle sort
     Merge merge;
+    cout << "Merge Sort Trials" << endl;
 
     // Best Case Sort
     auto start10 = high_resolution_clock::now();
@@ -161,6 +167,7 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop12 = high_resolution_clock::now();
     cout << "Time taken for best case merge sort on large array: " << duration_cast<microseconds>(stop12 - start12).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check merge sort
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
@@ -190,6 +197,7 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop15 = high_resolution_clock::now();
     cout << "Time taken for worst case merge sort on large array: " << duration_cast<microseconds>(stop15 - start15).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
@@ -219,6 +227,7 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop18 = high_resolution_clock::now();
     cout << "Time taken for average case merge sort on large array: " << duration_cast<microseconds>(stop18 - start18).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
@@ -238,6 +247,7 @@ int main() {
     // INSERTION SORT FUNCTION #3 ---------------------------------------------
     // make an object of sort and call on insertion sort class to handle sort
     Insertion insertion;
+    cout << "Insertion Sort Trials" << endl;
 
     // Best Case Sort
     auto start19 = high_resolution_clock::now();
@@ -252,6 +262,7 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop21 = high_resolution_clock::now();
     cout << "Time taken for best case insertion sort on large array: " << duration_cast<microseconds>(stop21 - start21).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check insertion sort
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
@@ -281,6 +292,7 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop24 = high_resolution_clock::now();
     cout << "Time taken for worst case insertion sort on large array: " << duration_cast<microseconds>(stop24 - start24).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
@@ -310,6 +322,7 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop27 = high_resolution_clock::now();
     cout << "Time taken for average case insertion sort on large array: " << duration_cast<microseconds>(stop27 - start27).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
@@ -328,6 +341,7 @@ int main() {
     // BUBBLE SORT FUNCTION #4 ------------------------------------------------
     // make an object of sort and call on bubble sort class to handle sort
     Bubble bubble;
+    cout << "Bubble Sort Trials" << endl;
 
     // Bubble Sort Best Case
     auto start28 = high_resolution_clock::now();
@@ -342,6 +356,7 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop30 = high_resolution_clock::now();
     cout << "Time taken for best case bubble sort on large array: " << duration_cast<microseconds>(stop30 - start30).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
@@ -371,6 +386,7 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop33 = high_resolution_clock::now();
     cout << "Time taken for worst case bubble sort on large array: " << duration_cast<microseconds>(stop33 - start33).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
@@ -400,7 +416,7 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop36 = high_resolution_clock::now();
     cout << "Time taken for average case bubble sort on large array: " << duration_cast<microseconds>(stop36 - start36).count() << " microseconds" << endl;
-
+    cout << endl << endl;
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after bubble sort: ");
@@ -419,7 +435,7 @@ int main() {
     // QUICK SORT FUNCTION #5 -------------------------------------------------
     // make an object of sort and call on quick sort class to handle sort
     Quick quick;
-
+    cout << "Quick Sort Trials" << endl;
     // Quick Sort Best Case
     auto start37 = high_resolution_clock::now();
     quick.quickSort(smallArr, 0, smallSize - 1);
@@ -433,6 +449,7 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop39 = high_resolution_clock::now();
     cout << "Time taken for best case quick sort on large array: " << duration_cast<microseconds>(stop39 - start39).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
@@ -462,6 +479,7 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop42 = high_resolution_clock::now();
     cout << "Time taken for worst case quick sort on large array: " << duration_cast<microseconds>(stop42 - start42).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
@@ -491,6 +509,7 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop45 = high_resolution_clock::now();
     cout << "Time taken for average case quick sort on large array: " << duration_cast<microseconds>(stop45 - start45).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
@@ -509,6 +528,7 @@ int main() {
     // RADIX SORT FUNCTION #6 -------------------------------------------------
     // make an object of sort and call on radix sort class to handle sort
     Radix radix;
+    cout << "Radix Sort Trials" << endl;
 
     // Radix Sort Best Case
     auto start46 = high_resolution_clock::now();
@@ -523,6 +543,7 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop48 = high_resolution_clock::now();
     cout << "Time taken for best case radix sort on large array: " << duration_cast<microseconds>(stop48 - start48).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
@@ -552,6 +573,7 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop51 = high_resolution_clock::now();
     cout << "Time taken for worst case radix sort on large array: " << duration_cast<microseconds>(stop51 - start51).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
@@ -581,6 +603,7 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop54 = high_resolution_clock::now();
     cout << "Time taken for average case radix sort on large array: " << duration_cast<microseconds>(stop54 - start54).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
@@ -599,6 +622,7 @@ int main() {
     // HEAP SORT FUNCTION #7 --------------------------------------------------
     // make an object of sort and call on heap sort class to handle sort
     Heap heap;
+    cout << "Heap Sort Trials" << endl;
 
     // Heap Sort Best Case
     auto start55 = high_resolution_clock::now();
@@ -613,6 +637,7 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop57 = high_resolution_clock::now();
     cout << "Time taken for best case heap sort on large array: " << duration_cast<microseconds>(stop57 - start57).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
@@ -642,6 +667,7 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop60 = high_resolution_clock::now();
     cout << "Time taken for worst case heap sort on large array: " << duration_cast<microseconds>(stop60 - start60).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
@@ -671,6 +697,7 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop63 = high_resolution_clock::now();
     cout << "Time taken for average case heap sort on large array: " << duration_cast<microseconds>(stop63 - start63).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
@@ -689,6 +716,7 @@ int main() {
     // COUNTING SORT FUNCTION #8 ----------------------------------------------
     // make an object of sort and call on counting sort class to handle sort
     Counting counting;
+    cout << "Counting Sort Trials" << endl;
 
     // Counting Sort Best Case
     auto start64 = high_resolution_clock::now();
@@ -703,7 +731,8 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop66 = high_resolution_clock::now();
     cout << "Time taken for best case counting sort on large array: " << duration_cast<microseconds>(stop66 - start66).count() << " microseconds" << endl;
-    
+    cout << endl;
+
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after counting sort: ");
@@ -732,6 +761,7 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop69 = high_resolution_clock::now();
     cout << "Time taken for worst case counting sort on large array: " << duration_cast<microseconds>(stop69 - start69).count() << " microseconds" << endl;
+    cout << endl;
 
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
@@ -761,6 +791,7 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop72 = high_resolution_clock::now();
     cout << "Time taken for average case counting sort on large array: " << duration_cast<microseconds>(stop72 - start72).count() << " microseconds" << endl;
+    cout << endl << endl;
 
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
