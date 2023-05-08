@@ -3,8 +3,11 @@
 // header files for implementation of random number generator
 #include <cstdlib>
 #include <ctime>
+// header file for chrono library
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
 
 // header files for each sort
 #include "Selection.h"
@@ -46,117 +49,193 @@ int main() {
     }
     int largeSize = 1000;
 
-    // print out small unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out all original arrays
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
+    // printOriginalArray(mediumArr, mediumSize, "Original array: ");
+    // printOriginalArray(largeArr, largeSize, "Original array: ");
 
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
     // make an object of sort and call on selection sort class to handle sort
     Selection selection;
-    selection.selectionSort(smallArr, smallSize);
 
-    // print out sorted array to check selection sort
-    printSortedArray(smallArr, smallSize, "Array after selection sort: ");
+    // Best Case Sort
+    auto start = high_resolution_clock::now();
+    selection.selectionSort(smallArr, smallSize);
+    auto stop = high_resolution_clock::now();
+    cout << "Time taken for best case selection sort on small array: " << duration_cast<microseconds>(stop - start).count() << " microseconds" << endl;
+    auto start2 = high_resolution_clock::now();
+    selection.selectionSort(mediumArr, mediumSize);
+    auto stop2 = high_resolution_clock::now();
+    cout << "Time taken for best case selection sort on medium array: " << duration_cast<microseconds>(stop2 - start2).count() << " microseconds" << endl;
+    auto start3 = high_resolution_clock::now();
+    selection.selectionSort(largeArr, largeSize);
+    auto stop3 = high_resolution_clock::now();
+    cout << "Time taken for best case selection sort on large array: " << duration_cast<microseconds>(stop3 - start3).count() << " microseconds" << endl;
+
+    // // print out sorted arrays to check selection sort [check passed]
+    // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
+    // printSortedArray(mediumArr, mediumSize, "Array after selection sort: "); 
+    // printSortedArray(largeArr, largeSize, "Array after selection sort: "); 
+
+    // reOrder arrays for worst case
+    reOrderWorstCase(smallArr, smallSize);
+    reOrderWorstCase(mediumArr, mediumSize);
+    reOrderWorstCase(largeArr, largeSize);
+
+    // // print out worst case arrays
+    // printOriginalArray(smallArr, smallSize, "Worst case array: ");
+    // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
+    // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+
+    // Worst Case Sort
+    auto start4 = high_resolution_clock::now();
+    selection.selectionSort(smallArr, smallSize);
+    auto stop4 = high_resolution_clock::now();
+    cout << "Time taken for worst case selection sort on small array: " << duration_cast<microseconds>(stop4 - start4).count() << " microseconds" << endl;
+    auto start5 = high_resolution_clock::now();
+    selection.selectionSort(mediumArr, mediumSize); 
+    auto stop5 = high_resolution_clock::now();
+    cout << "Time taken for worst case selection sort on medium array: " << duration_cast<microseconds>(stop5 - start5).count() << " microseconds" << endl;
+    auto start6 = high_resolution_clock::now();
+    selection.selectionSort(largeArr, largeSize);
+    auto stop6 = high_resolution_clock::now();
+    cout << "Time taken for worst case selection sort on large array: " << duration_cast<microseconds>(stop6 - start6).count() << " microseconds" << endl;
+
+    // // print out sorted worst case arrays
+    // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
+    // printSortedArray(mediumArr, mediumSize, "Array after selection sort: ");
+    // printSortedArray(largeArr, largeSize, "Array after selection sort: ");
+
+    // reOrder arrays for average case
+    reOrderAvgCase(smallArr, smallSize);
+    reOrderAvgCase(mediumArr, mediumSize);
+    reOrderAvgCase(largeArr, largeSize);
+
+    // // print out average case arrays
+    // printOriginalArray(smallArr, smallSize, "Average case array: ");
+    // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
+    // printOriginalArray(largeArr, largeSize, "Average case array: ");
+
+    // Average Case Sort
+    auto start7 = high_resolution_clock::now();
+    selection.selectionSort(smallArr, smallSize);
+    auto stop7 = high_resolution_clock::now();
+    cout << "Time taken for average case selection sort on small array: " << duration_cast<microseconds>(stop7 - start7).count() << " microseconds" << endl;
+    auto start8 = high_resolution_clock::now();
+    selection.selectionSort(mediumArr, mediumSize);
+    auto stop8 = high_resolution_clock::now();
+    cout << "Time taken for average case selection sort on medium array: " << duration_cast<microseconds>(stop8 - start8).count() << " microseconds" << endl;
+    auto start9 = high_resolution_clock::now();
+    selection.selectionSort(largeArr, largeSize);
+    auto stop9 = high_resolution_clock::now();
+    cout << "Time taken for average case selection sort on large array: " << duration_cast<microseconds>(stop9 - start9).count() << " microseconds" << endl;
+
+    // // print out sorted average case arrays
+    // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
+    // printSortedArray(mediumArr, mediumSize, "Array after selection sort: ");
+    // printSortedArray(largeArr, largeSize, "Array after selection sort: ");
+      
 
     // END OF SELECTION SORT FUNCTION #1 --------------------------------------
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // MERGE SORT FUNCTION #2 -------------------------------------------------
     // make an object of sort and call on merge sort class to handle sort
     Merge merge;
     merge.mergeSort(smallArr, 0, smallSize - 1);
 
-    // print out sorted array to check merge sort
-    printSortedArray(smallArr, smallSize, "Array after merge sort: ");
+    // // print out sorted array to check merge sort
+    // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
 
     // END OF MERGE SORT FUNCTION #2 ------------------------------------------
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // INSERTION SORT FUNCTION #3 ---------------------------------------------
     // make an object of sort and call on insertion sort class to handle sort
     Insertion insertion;
     insertion.insertionSort(smallArr, smallSize);
 
-    // print out sorted array to check insertion sort
-    printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
+    // // print out sorted array to check insertion sort
+    // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
     
     // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // BUBBLE SORT FUNCTION #4 ------------------------------------------------
     // make an object of sort and call on bubble sort class to handle sort
     Bubble bubble;
     bubble.bubbleSort(smallArr, smallSize);
 
-    // print out sorted array to check bubble sort
-    printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
+    // // print out sorted array to check bubble sort
+    // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
 
     // END OF BUBBLE SORT FUNCTION #4 -----------------------------------------
 
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // QUICK SORT FUNCTION #5 -------------------------------------------------
     // make an object of sort and call on quick sort class to handle sort
     Quick quick;
     quick.quickSort(smallArr, 0, smallSize - 1);
 
-    // print out sorted array to check quick sort
-    printSortedArray(smallArr, smallSize, "Array after quick sort: ");
+    // // print out sorted array to check quick sort
+    // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
 
     // END OF QUICK SORT FUNCTION #5 ------------------------------------------
     
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // RADIX SORT FUNCTION #6 -------------------------------------------------
     // make an object of sort and call on radix sort class to handle sort
     Radix radix;
     radix.radixSort(smallArr, smallSize);
 
-    // print out sorted array to check radix sort
-    printSortedArray(smallArr, smallSize, "Array after radix sort: ");
+    // // print out sorted array to check radix sort
+    // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
 
     // END OF RADIX SORT FUNCTION #6 ------------------------------------------
 
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // HEAP SORT FUNCTION #7 --------------------------------------------------
     // make an object of sort and call on heap sort class to handle sort
     Heap heap;
     heap.heapSort(smallArr, smallSize);
 
-    // print out sorted array to check heap sort
-    printSortedArray(smallArr, smallSize, "Array after heap sort: ");
+    // // print out sorted array to check heap sort
+    // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
 
     // END OF HEAP SORT FUNCTION #7 -------------------------------------------
 
 
 
-    // print out unsorted array
-    printOriginalArray(smallArr, smallSize, "Original array: ");
+    // // print out unsorted array
+    // printOriginalArray(smallArr, smallSize, "Original array: ");
 
     // COUNTING SORT FUNCTION #8 ----------------------------------------------
     // make an object of sort and call on counting sort class to handle sort
     Counting counting;
     counting.countingSort(smallArr, smallSize);
 
-    // print out sorted array to check counting sort
-    printSortedArray(smallArr, smallSize, "Array after counting sort: ");
+    // // print out sorted array to check counting sort
+    // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
 
     // END OF COUNTING SORT FUNCTION #8 ---------------------------------------
 
@@ -221,6 +300,6 @@ void printSortedArray(int arr[], int size, string message) {
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
-    cout << endl << endl;
+    cout << endl;
 }
 
