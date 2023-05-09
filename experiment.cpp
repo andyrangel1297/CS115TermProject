@@ -49,10 +49,17 @@ int main() {
     }
     int largeSize = 1000;
 
+    int largerArr[10000];
+    for (int i = 0; i < 10000; i++) {
+        largerArr[i] = i + 1;
+    }
+    int largerSize = 10000;
+
     // // print out all original arrays
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
     
 //======================================================================================================================================================================
     // SELECTION SORT FUNCTION #1 ---------------------------------------------
@@ -73,22 +80,29 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop3 = high_resolution_clock::now();
     cout << "Time taken for best case selection sort on large array: " << duration_cast<microseconds>(stop3 - start3).count() << " microseconds" << endl;
+    auto start73 = high_resolution_clock::now();
+    selection.selectionSort(largerArr, largerSize);
+    auto stop73 = high_resolution_clock::now();
+    cout << "Time taken for best case selection sort on larger array: " << duration_cast<microseconds>(stop73 - start73).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted arrays to check selection sort [check passed]
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after selection sort: "); 
-    // printSortedArray(largeArr, largeSize, "Array after selection sort: "); 
+    // printSortedArray(largeArr, largeSize, "Array after selection sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after selection sort: "); 
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Worst Case Sort
     auto start4 = high_resolution_clock::now();
@@ -103,22 +117,29 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop6 = high_resolution_clock::now();
     cout << "Time taken for worst case selection sort on large array: " << duration_cast<microseconds>(stop6 - start6).count() << " microseconds" << endl;
+    auto start74 = high_resolution_clock::now();
+    selection.selectionSort(largerArr, largerSize);
+    auto stop74 = high_resolution_clock::now();
+    cout << "Time taken for worst case selection sort on larger array: " << duration_cast<microseconds>(stop74 - start74).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after selection sort: ");
     // printSortedArray(largeArr, largeSize, "Array after selection sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after selection sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Average Case Sort
     auto start7 = high_resolution_clock::now();
@@ -133,12 +154,17 @@ int main() {
     selection.selectionSort(largeArr, largeSize);
     auto stop9 = high_resolution_clock::now();
     cout << "Time taken for average case selection sort on large array: " << duration_cast<microseconds>(stop9 - start9).count() << " microseconds" << endl;
+    auto start75 = high_resolution_clock::now();
+    selection.selectionSort(largerArr, largerSize);
+    auto stop75 = high_resolution_clock::now();
+    cout << "Time taken for average case selection sort on larger array: " << duration_cast<microseconds>(stop75 - start75).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after selection sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after selection sort: ");
     // printSortedArray(largeArr, largeSize, "Array after selection sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after selection sort: ");
 
     // END OF SELECTION SORT FUNCTION #1 --------------------------------------
 //======================================================================================================================================================================
@@ -147,6 +173,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // MERGE SORT FUNCTION #2 -------------------------------------------------
@@ -167,22 +194,29 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop12 = high_resolution_clock::now();
     cout << "Time taken for best case merge sort on large array: " << duration_cast<microseconds>(stop12 - start12).count() << " microseconds" << endl;
+    auto start76 = high_resolution_clock::now();
+    merge.mergeSort(largerArr, 0, largerSize - 1);
+    auto stop76 = high_resolution_clock::now();
+    cout << "Time taken for best case merge sort on larger array: " << duration_cast<microseconds>(stop76 - start76).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check merge sort
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after merge sort: ");
     // printSortedArray(largeArr, largeSize, "Array after merge sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after merge sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Worst Case Sort
     auto start13 = high_resolution_clock::now();
@@ -197,22 +231,29 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop15 = high_resolution_clock::now();
     cout << "Time taken for worst case merge sort on large array: " << duration_cast<microseconds>(stop15 - start15).count() << " microseconds" << endl;
+    auto start77 = high_resolution_clock::now();
+    merge.mergeSort(largerArr, 0, largerSize - 1);
+    auto stop77 = high_resolution_clock::now();
+    cout << "Time taken for worst case merge sort on larger array: " << duration_cast<microseconds>(stop77 - start77).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after merge sort: ");
     // printSortedArray(largeArr, largeSize, "Array after merge sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after merge sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Average Case Sort
     auto start16 = high_resolution_clock::now();
@@ -227,12 +268,17 @@ int main() {
     merge.mergeSort(largeArr, 0, largeSize - 1);
     auto stop18 = high_resolution_clock::now();
     cout << "Time taken for average case merge sort on large array: " << duration_cast<microseconds>(stop18 - start18).count() << " microseconds" << endl;
+    auto start78 = high_resolution_clock::now();
+    merge.mergeSort(largerArr, 0, largerSize - 1);
+    auto stop78 = high_resolution_clock::now();
+    cout << "Time taken for average case merge sort on larger array: " << duration_cast<microseconds>(stop78 - start78).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after merge sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after merge sort: ");
     // printSortedArray(largeArr, largeSize, "Array after merge sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after merge sort: ");
 
     // END OF MERGE SORT FUNCTION #2 ------------------------------------------
 //======================================================================================================================================================================
@@ -242,6 +288,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // INSERTION SORT FUNCTION #3 ---------------------------------------------
@@ -262,22 +309,29 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop21 = high_resolution_clock::now();
     cout << "Time taken for best case insertion sort on large array: " << duration_cast<microseconds>(stop21 - start21).count() << " microseconds" << endl;
+    auto start79 = high_resolution_clock::now();
+    insertion.insertionSort(largerArr, largerSize);
+    auto stop79 = high_resolution_clock::now();
+    cout << "Time taken for best case insertion sort on larger array: " << duration_cast<microseconds>(stop79 - start79).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check insertion sort
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after insertion sort: ");
     // printSortedArray(largeArr, largeSize, "Array after insertion sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after insertion sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Worst Case Sort
     auto start22 = high_resolution_clock::now();
@@ -292,22 +346,29 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop24 = high_resolution_clock::now();
     cout << "Time taken for worst case insertion sort on large array: " << duration_cast<microseconds>(stop24 - start24).count() << " microseconds" << endl;
+    auto start80 = high_resolution_clock::now();
+    insertion.insertionSort(largerArr, largerSize);
+    auto stop80 = high_resolution_clock::now();
+    cout << "Time taken for worst case insertion sort on larger array: " << duration_cast<microseconds>(stop80 - start80).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted worst case arrays
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after insertion sort: ");
     // printSortedArray(largeArr, largeSize, "Array after insertion sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after insertion sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Average Case Sort
     auto start25 = high_resolution_clock::now();
@@ -322,12 +383,17 @@ int main() {
     insertion.insertionSort(largeArr, largeSize);
     auto stop27 = high_resolution_clock::now();
     cout << "Time taken for average case insertion sort on large array: " << duration_cast<microseconds>(stop27 - start27).count() << " microseconds" << endl;
+    auto start81 = high_resolution_clock::now();
+    insertion.insertionSort(largerArr, largerSize);
+    auto stop81 = high_resolution_clock::now();
+    cout << "Time taken for average case insertion sort on larger array: " << duration_cast<microseconds>(stop81 - start81).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted average case arrays
     // printSortedArray(smallArr, smallSize, "Array after insertion sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after insertion sort: ");
     // printSortedArray(largeArr, largeSize, "Array after insertion sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after insertion sort: ");
 
     // END OF INSERTION SORT FUNCTION #3 --------------------------------------
 //======================================================================================================================================================================
@@ -336,6 +402,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // BUBBLE SORT FUNCTION #4 ------------------------------------------------
@@ -356,22 +423,29 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop30 = high_resolution_clock::now();
     cout << "Time taken for best case bubble sort on large array: " << duration_cast<microseconds>(stop30 - start30).count() << " microseconds" << endl;
+    auto start82 = high_resolution_clock::now();
+    bubble.bubbleSort(largerArr, largerSize);
+    auto stop82 = high_resolution_clock::now();
+    cout << "Time taken for best case bubble sort on larger array: " << duration_cast<microseconds>(stop82 - start82).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after bubble sort: ");
     // printSortedArray(largeArr, largeSize, "Array after bubble sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after bubble sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Bubble Sort Worst Case
     auto start31 = high_resolution_clock::now();
@@ -386,22 +460,29 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop33 = high_resolution_clock::now();
     cout << "Time taken for worst case bubble sort on large array: " << duration_cast<microseconds>(stop33 - start33).count() << " microseconds" << endl;
+    auto start83 = high_resolution_clock::now();
+    bubble.bubbleSort(largerArr, largerSize);
+    auto stop83 = high_resolution_clock::now();
+    cout << "Time taken for worst case bubble sort on larger array: " << duration_cast<microseconds>(stop83 - start83).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after bubble sort: ");
     // printSortedArray(largeArr, largeSize, "Array after bubble sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after bubble sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Bubble Sort Average Case
     auto start34 = high_resolution_clock::now();
@@ -416,11 +497,17 @@ int main() {
     bubble.bubbleSort(largeArr, largeSize);
     auto stop36 = high_resolution_clock::now();
     cout << "Time taken for average case bubble sort on large array: " << duration_cast<microseconds>(stop36 - start36).count() << " microseconds" << endl;
+    auto start84 = high_resolution_clock::now();
+    bubble.bubbleSort(largerArr, largerSize);
+    auto stop84 = high_resolution_clock::now();
+    cout << "Time taken for average case bubble sort on larger array: " << duration_cast<microseconds>(stop84 - start84).count() << " microseconds" << endl;
     cout << endl << endl;
+
     // // print out sorted array to check bubble sort
     // printSortedArray(smallArr, smallSize, "Array after bubble sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after bubble sort: ");
     // printSortedArray(largeArr, largeSize, "Array after bubble sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after bubble sort: ");
     
     // END OF BUBBLE SORT FUNCTION #4 -----------------------------------------
 //======================================================================================================================================================================
@@ -430,6 +517,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // QUICK SORT FUNCTION #5 -------------------------------------------------
@@ -449,22 +537,29 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop39 = high_resolution_clock::now();
     cout << "Time taken for best case quick sort on large array: " << duration_cast<microseconds>(stop39 - start39).count() << " microseconds" << endl;
+    auto start85 = high_resolution_clock::now();
+    quick.quickSort(largerArr, 0, largerSize - 1);
+    auto stop85 = high_resolution_clock::now();
+    cout << "Time taken for best case quick sort on larger array: " << duration_cast<microseconds>(stop85 - start85).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after quick sort: ");
     // printSortedArray(largeArr, largeSize, "Array after quick sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after quick sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Quick Sort Worst Case
     auto start40 = high_resolution_clock::now();
@@ -479,22 +574,29 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop42 = high_resolution_clock::now();
     cout << "Time taken for worst case quick sort on large array: " << duration_cast<microseconds>(stop42 - start42).count() << " microseconds" << endl;
+    auto start86 = high_resolution_clock::now();
+    quick.quickSort(largerArr, 0, largerSize - 1);
+    auto stop86 = high_resolution_clock::now();
+    cout << "Time taken for worst case quick sort on larger array: " << duration_cast<microseconds>(stop86 - start86).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after quick sort: ");
     // printSortedArray(largeArr, largeSize, "Array after quick sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after quick sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Quick Sort Average Case
     auto start43 = high_resolution_clock::now();
@@ -509,12 +611,17 @@ int main() {
     quick.quickSort(largeArr, 0, largeSize - 1);
     auto stop45 = high_resolution_clock::now();
     cout << "Time taken for average case quick sort on large array: " << duration_cast<microseconds>(stop45 - start45).count() << " microseconds" << endl;
+    auto start87 = high_resolution_clock::now();
+    quick.quickSort(largerArr, 0, largerSize - 1);
+    auto stop87 = high_resolution_clock::now();
+    cout << "Time taken for average case quick sort on larger array: " << duration_cast<microseconds>(stop87 - start87).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted array to check quick sort
     // printSortedArray(smallArr, smallSize, "Array after quick sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after quick sort: ");
     // printSortedArray(largeArr, largeSize, "Array after quick sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after quick sort: ");
 
     // END OF QUICK SORT FUNCTION #5 ------------------------------------------
 //======================================================================================================================================================================
@@ -523,6 +630,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // RADIX SORT FUNCTION #6 -------------------------------------------------
@@ -543,22 +651,29 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop48 = high_resolution_clock::now();
     cout << "Time taken for best case radix sort on large array: " << duration_cast<microseconds>(stop48 - start48).count() << " microseconds" << endl;
+    auto start88 = high_resolution_clock::now();
+    radix.radixSort(largerArr, largerSize);
+    auto stop88 = high_resolution_clock::now();
+    cout << "Time taken for best case radix sort on larger array: " << duration_cast<microseconds>(stop88 - start88).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after radix sort: ");
     // printSortedArray(largeArr, largeSize, "Array after radix sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after radix sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Radix Sort Worst Case
     auto start49 = high_resolution_clock::now();
@@ -573,22 +688,29 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop51 = high_resolution_clock::now();
     cout << "Time taken for worst case radix sort on large array: " << duration_cast<microseconds>(stop51 - start51).count() << " microseconds" << endl;
+    auto start89 = high_resolution_clock::now();
+    radix.radixSort(largerArr, largerSize);
+    auto stop89 = high_resolution_clock::now();
+    cout << "Time taken for worst case radix sort on larger array: " << duration_cast<microseconds>(stop89 - start89).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after radix sort: ");
     // printSortedArray(largeArr, largeSize, "Array after radix sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after radix sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Radix Sort Average Case
     auto start52 = high_resolution_clock::now();
@@ -603,12 +725,17 @@ int main() {
     radix.radixSort(largeArr, largeSize);
     auto stop54 = high_resolution_clock::now();
     cout << "Time taken for average case radix sort on large array: " << duration_cast<microseconds>(stop54 - start54).count() << " microseconds" << endl;
+    auto start90 = high_resolution_clock::now();
+    radix.radixSort(largerArr, largerSize);
+    auto stop90 = high_resolution_clock::now();
+    cout << "Time taken for average case radix sort on larger array: " << duration_cast<microseconds>(stop90 - start90).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted array to check radix sort
     // printSortedArray(smallArr, smallSize, "Array after radix sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after radix sort: ");
     // printSortedArray(largeArr, largeSize, "Array after radix sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after radix sort: ");
 
     // END OF RADIX SORT FUNCTION #6 ------------------------------------------
 //======================================================================================================================================================================
@@ -617,6 +744,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // HEAP SORT FUNCTION #7 --------------------------------------------------
@@ -637,22 +765,29 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop57 = high_resolution_clock::now();
     cout << "Time taken for best case heap sort on large array: " << duration_cast<microseconds>(stop57 - start57).count() << " microseconds" << endl;
+    auto start91 = high_resolution_clock::now();
+    heap.heapSort(largerArr, largerSize);
+    auto stop91 = high_resolution_clock::now();
+    cout << "Time taken for best case heap sort on larger array: " << duration_cast<microseconds>(stop91 - start91).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after heap sort: ");
     // printSortedArray(largeArr, largeSize, "Array after heap sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after heap sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Heap Sort Worst Case
     auto start58 = high_resolution_clock::now();
@@ -667,22 +802,29 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop60 = high_resolution_clock::now();
     cout << "Time taken for worst case heap sort on large array: " << duration_cast<microseconds>(stop60 - start60).count() << " microseconds" << endl;
+    auto start92 = high_resolution_clock::now();
+    heap.heapSort(largerArr, largerSize);
+    auto stop92 = high_resolution_clock::now();
+    cout << "Time taken for worst case heap sort on larger array: " << duration_cast<microseconds>(stop92 - start92).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after heap sort: ");
     // printSortedArray(largeArr, largeSize, "Array after heap sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after heap sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Heap Sort Average Case
     auto start61 = high_resolution_clock::now();
@@ -697,12 +839,17 @@ int main() {
     heap.heapSort(largeArr, largeSize);
     auto stop63 = high_resolution_clock::now();
     cout << "Time taken for average case heap sort on large array: " << duration_cast<microseconds>(stop63 - start63).count() << " microseconds" << endl;
+    auto start93 = high_resolution_clock::now();
+    heap.heapSort(largerArr, largerSize);
+    auto stop93 = high_resolution_clock::now();
+    cout << "Time taken for average case heap sort on larger array: " << duration_cast<microseconds>(stop93 - start93).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted array to check heap sort
     // printSortedArray(smallArr, smallSize, "Array after heap sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after heap sort: ");
     // printSortedArray(largeArr, largeSize, "Array after heap sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after heap sort: ");
 
     // END OF HEAP SORT FUNCTION #7 -------------------------------------------
 //======================================================================================================================================================================
@@ -711,6 +858,7 @@ int main() {
     // printOriginalArray(smallArr, smallSize, "Original array: ");
     // printOriginalArray(mediumArr, mediumSize, "Original array: ");
     // printOriginalArray(largeArr, largeSize, "Original array: ");
+    // printOriginalArray(largerArr, largerSize, "Original array: ");
 
 //======================================================================================================================================================================
     // COUNTING SORT FUNCTION #8 ----------------------------------------------
@@ -731,22 +879,29 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop66 = high_resolution_clock::now();
     cout << "Time taken for best case counting sort on large array: " << duration_cast<microseconds>(stop66 - start66).count() << " microseconds" << endl;
+    auto start94 = high_resolution_clock::now();
+    counting.countingSort(largerArr, largerSize);
+    auto stop94 = high_resolution_clock::now();
+    cout << "Time taken for best case counting sort on larger array: " << duration_cast<microseconds>(stop94 - start94).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after counting sort: ");
     // printSortedArray(largeArr, largeSize, "Array after counting sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after counting sort: ");
 
     // reOrder arrays for worst case
     reOrderWorstCase(smallArr, smallSize);
     reOrderWorstCase(mediumArr, mediumSize);
     reOrderWorstCase(largeArr, largeSize);
+    reOrderWorstCase(largerArr, largerSize);
 
     // // print out worst case arrays
     // printOriginalArray(smallArr, smallSize, "Worst case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Worst case array: ");
     // printOriginalArray(largeArr, largeSize, "Worst case array: ");
+    // printOriginalArray(largerArr, largerSize, "Worst case array: ");
 
     // Counting Sort Worst Case
     auto start67 = high_resolution_clock::now();
@@ -761,22 +916,29 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop69 = high_resolution_clock::now();
     cout << "Time taken for worst case counting sort on large array: " << duration_cast<microseconds>(stop69 - start69).count() << " microseconds" << endl;
+    auto start95 = high_resolution_clock::now();
+    counting.countingSort(largerArr, largerSize);
+    auto stop95 = high_resolution_clock::now();
+    cout << "Time taken for worst case counting sort on larger array: " << duration_cast<microseconds>(stop95 - start95).count() << " microseconds" << endl;
     cout << endl;
 
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after counting sort: ");
     // printSortedArray(largeArr, largeSize, "Array after counting sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after counting sort: ");
 
     // reOrder arrays for average case
     reOrderAvgCase(smallArr, smallSize);
     reOrderAvgCase(mediumArr, mediumSize);
     reOrderAvgCase(largeArr, largeSize);
+    reOrderAvgCase(largerArr, largerSize);
 
     // // print out average case arrays
     // printOriginalArray(smallArr, smallSize, "Average case array: ");
     // printOriginalArray(mediumArr, mediumSize, "Average case array: ");
     // printOriginalArray(largeArr, largeSize, "Average case array: ");
+    // printOriginalArray(largerArr, largerSize, "Average case array: ");
 
     // Counting Sort Average Case
     auto start70 = high_resolution_clock::now();
@@ -791,12 +953,17 @@ int main() {
     counting.countingSort(largeArr, largeSize);
     auto stop72 = high_resolution_clock::now();
     cout << "Time taken for average case counting sort on large array: " << duration_cast<microseconds>(stop72 - start72).count() << " microseconds" << endl;
+    auto start96 = high_resolution_clock::now();
+    counting.countingSort(largerArr, largerSize);
+    auto stop96 = high_resolution_clock::now();
+    cout << "Time taken for average case counting sort on larger array: " << duration_cast<microseconds>(stop96 - start96).count() << " microseconds" << endl;
     cout << endl << endl;
 
     // // print out sorted array to check counting sort
     // printSortedArray(smallArr, smallSize, "Array after counting sort: ");
     // printSortedArray(mediumArr, mediumSize, "Array after counting sort: ");
     // printSortedArray(largeArr, largeSize, "Array after counting sort: ");
+    // printSortedArray(largerArr, largerSize, "Array after counting sort: ");
     
     // END OF COUNTING SORT FUNCTION #8 ---------------------------------------
 //======================================================================================================================================================================
