@@ -10,6 +10,7 @@ Getting Started
 --------------------
 
 To use this program, follow these steps:
+    
     1. Close the repository or download the source code files
     2. Open the terminal or command prompt and navigate to the directory containing the source code files.
     3. Compile the source code files using a C++ compiler.  
