@@ -25,7 +25,7 @@ int main(void) {
 		cout << "Pair not found" << endl;
 	}
 	
-	cout << "/nEfficient: ";
+	cout << "Efficient: ";
 	if (findPairEfficient(a, n, x) == true) {
 		cout << "Pair found" << endl;
 	}
