@@ -3,21 +3,21 @@ using namespace std;
 
 bool findPairBrute(int arr[], int n, int x);
 bool findPairEfficient(int arr[], int n, int x);
-void bubbleSort(int arr[], int n);
-void swap(int& a, int& b);
+void countingSort(int arr[], int size);
 
 int main(void) {
 
 	const int n = 6;
 	int a[n] = { 3, 1, 1, 13, 7, 5 };
-	bubbleSort(a, n);
+	countingSort(a, n);
 
 	int x = 10;
 
 	for (int i = 0; i < n; i++) {
 		cout << a[i] << " ";
-	} cout << "\n" << endl;
+	} cout << endl;
 
+	cout << "\nBrute Force: ";
 	if (findPairBrute(a, n, x) == true) {
 		cout << "Pair found" << endl;
 	}
@@ -25,6 +25,7 @@ int main(void) {
 		cout << "Pair not found" << endl;
 	}
 	
+	cout << "/nEfficient: ";
 	if (findPairEfficient(a, n, x) == true) {
 		cout << "Pair found" << endl;
 	}
@@ -68,21 +69,46 @@ bool findPairEfficient(int arr[], int n, int x) {
 	return false;
 }
 
-void bubbleSort(int arr[], int n) {
+void countingSort(int arr[], int size) {
+    // find max element in array
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
 
-	for (int i = 0; i < n; i++) {
-		//pass n times to check bubbles
-		for (int j = n - 1; j > i; j--) {
-			//compare adjacent elements
-			if (arr[j] < arr[j - 1]) {
-				swap(arr[j], arr[j - 1]);
-			}
-		}
-	}
-}
+    // create count array
+    int* count = new int[max + 1];
+    for (int i = 0; i < max + 1; i++) {
+        count[i] = 0;
+    }
 
-void swap(int& a, int& b) {
-	int temp = a;
-	a = b;
-	b = temp;
+    // store count of each element
+    for (int i = 0; i < size; i++) {
+        count[arr[i]]++;
+    }
+
+    // change count[i] so that count[i] now contains actual position of element
+    for (int i = 1; i <= max; i++) {
+        count[i] += count[i - 1];
+    }
+
+    // create output array
+    int* output = new int[size];
+
+    // build output array
+    for (int i = size - 1; i >= 0; i--) {
+        output[count[arr[i]] - 1] = arr[i];
+        count[arr[i]]--;
+    }
+
+    // copy output array to original array
+    for (int i = 0; i < size; i++) {
+        arr[i] = output[i];
+    }
+
+    // delete dynamic arrays
+    delete[] count;
+    delete[] output;
 }
